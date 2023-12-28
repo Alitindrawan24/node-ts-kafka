@@ -1,7 +1,9 @@
 import { Kafka } from "kafkajs";
 
+const { KAFKA_HOST } = process.env
+
 const kafka = new Kafka({
-    "brokers": ["localhost:9092"]
+    "brokers": [KAFKA_HOST ?? ""]
 })
 
 const consumer = kafka.consumer({
